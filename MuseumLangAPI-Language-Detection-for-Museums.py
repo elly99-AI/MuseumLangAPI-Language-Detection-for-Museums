@@ -1,5 +1,3 @@
-! pip install flask
-
 from flask import Flask, request, jsonify
 import pickle
 import logging
@@ -61,3 +59,4 @@ def identify_language():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5009)
+
