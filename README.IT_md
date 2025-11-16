@@ -1,0 +1,31 @@
+# MuseumLangAPI – Riconoscimento della Lingua per i Musei
+
+## Executive Summary
+MuseumLangID diventa **MuseumLangAPI**: un servizio REST che espone il modello di riconoscimento automatico della lingua dei testi museali.  
+L’API riceve testi in formato JSON, restituisce il codice della lingua insieme a un livello di confidenza, ed è progettata per scalare e integrarsi facilmente con i sistemi gestionali del museo.
+
+- **Problema:** il modello era precedentemente limitato all’uso locale; la mancanza di un’interfaccia standard ostacolava collaborazione e integrazione.  
+- **Obiettivo:** fornire il modello tramite una **REST API** (Flask o FastAPI), con input JSON e output del codice lingua.  
+- **Benefici:**  
+  - **Accessibilità:** servizio remoto disponibile per tutti i reparti del museo.  
+  - **Integrazione:** facile embedding nelle applicazioni software esistenti.  
+  - **Scalabilità:** supporto a richieste parallele da parte di più utenti.  
+
+---
+
+## Cosa Ho Fatto
+Ho progettato e implementato **MuseumLangAPI** utilizzando Flask:  
+- Caricamento del modello una sola volta all’avvio per ottimizzare le prestazioni.  
+- Validazione dell’input per garantire richieste affidabili.  
+- Implementazione del calcolo della confidenza quando disponibile (`predict_proba`).  
+- Configurazione di logging strutturato con livelli INFO/WARNING/ERROR.  
+- Gestione robusta delle eccezioni con `try/except` e codici di risposta standard (200, 400, 500).  
+- Creazione dell’endpoint `/identify-language` pronto per l’integrazione in sistemi esterni.  
+
+---
+
+## Tech Stack
+- **Framework:** Flask (Python)  
+- **Modello:** `language_detection_pipeline.pkl` (pipeline scikit-learn)  
+- **Logging:** file `api.log` con livelli INFO/WARNING/ERROR  
+
