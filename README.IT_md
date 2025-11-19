@@ -1,5 +1,7 @@
 # MuseumLangAPI – Riconoscimento della Lingua per i Musei
 
+Progetto fatto durante il Master in AI Developer di Profession AI
+
 ## Executive Summary
 MuseumLangID diventa **MuseumLangAPI**: un servizio REST che espone il modello di riconoscimento automatico della lingua dei testi museali.  
 L’API riceve testi in formato JSON, restituisce il codice della lingua insieme a un livello di confidenza, ed è progettata per scalare e integrarsi facilmente con i sistemi gestionali del museo.
